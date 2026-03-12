@@ -1,0 +1,22 @@
+# Environment and exports
+.env
+.env.*
+!.env.example
+*.local
+*.tmp
+*.bak
+
+# Local BI and analysis artifacts
+*.transcript.md
+*.promptlog
+*.session.json
+AGENTS.override.md
+CLAUDE.local.md
+GEMINI.local.md
+.continue/dev_data/
+.continue/.cache/
+
+# Editors and OS files
+.DS_Store
+.idea/
+.vscode/settings.json

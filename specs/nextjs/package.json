@@ -1,0 +1,9 @@
+{
+  "name": "nextjs-project-template",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "lint": "next lint",
+    "test": "vitest run"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "ai-stacks": {
+      "command": "python3",
+      "args": ["tools/mcp_server/server.py"]
+    }
+  }
+}

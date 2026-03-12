@@ -1,0 +1,37 @@
+# Environment and local overrides
+.env
+.env.*
+!.env.example
+*.local
+
+# Agent and assistant local state
+*.transcript.md
+*.promptlog
+*.session.json
+AGENTS.override.md
+CLAUDE.local.md
+GEMINI.local.md
+.gemini/
+gha-creds-*.json
+
+# Continue local state
+.continue/dev_data/
+.continue/.cache/
+
+# Python caches
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+
+# Node and build output
+node_modules/
+dist/
+build/
+coverage/
+
+# Editor and OS files
+.DS_Store
+.idea/
+.vscode/settings.json

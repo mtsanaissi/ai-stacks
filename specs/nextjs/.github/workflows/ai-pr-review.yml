@@ -1,0 +1,15 @@
+name: AI PR Review
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  review-template:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          echo "Replace this placeholder with Claude Code Action,"
+          echo "Gemini CLI Action, Continue checks, or your preferred review automation."

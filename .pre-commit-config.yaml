@@ -1,0 +1,22 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: check-merge-conflict
+      - id: detect-private-key
+  - repo: local
+    hooks:
+      - id: validate-agent-files
+        name: validate agent files
+        entry: python3 tools/agent_docs/validate_agent_files.py
+        language: system
+        pass_filenames: false
+      - id: validate-template-completeness
+        name: validate template completeness
+        entry: python3 tools/template_checks/validate_templates.py
+        language: system
+        pass_filenames: false

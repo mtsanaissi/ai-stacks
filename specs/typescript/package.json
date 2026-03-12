@@ -1,0 +1,9 @@
+{
+  "name": "typescript-project-template",
+  "private": true,
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  }
+}
