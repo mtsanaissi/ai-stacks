@@ -181,13 +181,84 @@ jobs:
           output_path.write_text(prompt + "\n", encoding="utf-8")
           PY
 
-      - name: AI review with Gemini CLI
+      - name: Set up Node
         if: steps.gemini-secret.outputs.enabled == 'true' && steps.classify.outputs.review_needed == 'true'
-        uses: google-github-actions/run-gemini-cli@v0
+        uses: actions/setup-node@v4
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          gemini_api_key: ${{ secrets.GEMINI_API_KEY }}
-          gemini_model: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash-lite' }}
-          use-github-commenter: true
-          prompt-from-file: .github/prompts/generated-repo-pr-review.md
-          sandbox: true
+          node-version: "22"
+
+      - name: Install Gemini CLI
+        if: steps.gemini-secret.outputs.enabled == 'true' && steps.classify.outputs.review_needed == 'true'
+        run: npm install -g @google/gemini-cli@latest
+
+      - name: Run Gemini review
+        id: gemini-review
+        if: steps.gemini-secret.outputs.enabled == 'true' && steps.classify.outputs.review_needed == 'true'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash-lite' }}
+          STDOUT_FILE: ${{ runner.temp }}/gemini-stdout.json
+          STDERR_FILE: ${{ runner.temp }}/gemini-stderr.log
+          RESPONSE_FILE: ${{ runner.temp }}/gemini-review-response.md
+          ERROR_FILE: ${{ runner.temp }}/gemini-review-error.log
+        run: |
+          set -euo pipefail
+          mkdir -p "$HOME/.gemini"
+
+          PROMPT_FILE=".github/prompts/generated-repo-pr-review.md"
+
+          if ! gemini --yolo --model "$GEMINI_MODEL" --prompt "$(cat "$PROMPT_FILE")" --output-format json >"$STDOUT_FILE" 2>"$STDERR_FILE"; then
+            echo "Gemini CLI execution failed." >&2
+            cat "$STDERR_FILE" >&2
+            exit 1
+          fi
+
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          stdout_path = Path(os.environ["STDOUT_FILE"])
+          stderr_path = Path(os.environ["STDERR_FILE"])
+          response_path = Path(os.environ["RESPONSE_FILE"])
+          error_path = Path(os.environ["ERROR_FILE"])
+
+          raw_stdout = stdout_path.read_text(encoding="utf-8")
+          raw_stderr = stderr_path.read_text(encoding="utf-8")
+
+          response = raw_stdout.strip()
+          try:
+              payload = json.loads(raw_stdout)
+          except json.JSONDecodeError:
+              payload = None
+
+          if isinstance(payload, dict):
+              response = str(payload.get("response", "")).strip() or raw_stdout.strip()
+
+          response_path.write_text(response + ("\n" if response else ""), encoding="utf-8")
+          error_path.write_text(raw_stderr, encoding="utf-8")
+          PY
+
+      - name: Add Gemini review to job summary
+        if: steps.gemini-review.outcome == 'success'
+        run: |
+          {
+            echo "### Gemini Review"
+            echo
+            cat "$RUNNER_TEMP/gemini-review-response.md"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Comment Gemini review on PR
+        if: github.event_name == 'pull_request' && steps.gemini-review.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+          COMMENT_FILE="$RUNNER_TEMP/gemini-pr-comment.md"
+          {
+            echo "## Gemini Review"
+            echo
+            cat "$RUNNER_TEMP/gemini-review-response.md"
+          } > "$COMMENT_FILE"
+          gh pr comment "$PR_NUMBER" --body-file "$COMMENT_FILE"
