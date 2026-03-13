@@ -9,3 +9,5 @@ ts	id	action	actor	note
 2026-03-13T12:41:57Z	T-005	complete	codex	Updated the workflow to use the correct gemini_api_key action input.
 2026-03-13T13:18:14Z	T-006	create	codex	Created a small fix task for replacing the unsupported Gemini action wrapper usage.
 2026-03-13T13:18:14Z	T-006	complete	codex	Replaced the Gemini action wrapper with explicit CLI execution and separate PR commenting.
+2026-03-13T14:30:20Z	T-002	start	codex	Started work on expanding PR workflow path coverage for root docs.
+2026-03-13T14:30:38Z	T-002	complete	codex	Expanded PR workflow path coverage to include root README and contribution docs.
