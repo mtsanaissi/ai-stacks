@@ -1,0 +1,7 @@
+ts	id	action	actor	note
+2026-03-12T20:54:26Z	T-001	create	codex	Created follow-up task for adding the missing pre-commit selected-skill sync validation.
+2026-03-12T20:54:26Z	T-002	create	codex	Created follow-up task for expanding PR workflow path filters to cover root docs.
+2026-03-12T20:54:26Z	T-003	create	codex	Created follow-up task for separating deterministic validation from AI PR review workflow responsibilities.
+2026-03-12T20:54:26Z	T-004	create	codex	Created follow-up task for adding lightweight contribution templates.
+2026-03-12T20:56:16Z	T-001	start	codex	Started work on adding the selected local skill sync pre-commit hook.
+2026-03-12T20:56:29Z	T-001	complete	codex	Added the selected local skill sync pre-commit hook and verified the repo checks still pass.
