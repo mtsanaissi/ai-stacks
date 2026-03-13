@@ -7,6 +7,12 @@
 
 See [CONTRIBUTING.md](/home/mitissa/code/ai-stacks/CONTRIBUTING.md) for contribution expectations and [LICENSE](/home/mitissa/code/ai-stacks/LICENSE) for licensing.
 
+Support paths:
+- [Issues](https://github.com/mtsanaissi/ai-stacks/issues)
+- [Support guide](/home/mitissa/code/ai-stacks/SUPPORT.md)
+- [GitHub Sponsors](https://github.com/sponsors/mtsanaissi)
+- [Buy Me a Coffee](https://buymeacoffee.com/mtsanaissi)
+
 The repo serves two purposes:
 
 - It stores scaffolding material for future AI-assisted projects, agent skills and tools.
@@ -219,6 +225,18 @@ Mechanical-only examples include:
 - workflow-only changes
 - prompt-only changes
 - root `.gitignore` or root `.pre-commit-config.yaml` changes
+
+## Support
+
+For bugs, broken docs, or workflow issues:
+
+- [Open an issue](https://github.com/mtsanaissi/ai-stacks/issues)
+- [Read the support guide](/home/mitissa/code/ai-stacks/SUPPORT.md)
+
+If you want to support ongoing maintenance:
+
+- [GitHub Sponsors](https://github.com/sponsors/mtsanaissi)
+- [Buy Me a Coffee](https://buymeacoffee.com/mtsanaissi)
 
 ## Current Focus
 
