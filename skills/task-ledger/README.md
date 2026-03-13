@@ -65,7 +65,7 @@ It is not meant to replace a stronger project-specific task system that already 
 If you hit a bug or a documentation problem while using this skill in `ai-stacks`:
 
 - [Open an issue](https://github.com/mtsanaissi/ai-stacks/issues)
-- [Read the support guide](/home/mitissa/code/ai-stacks/SUPPORT.md)
+- [Read the support guide](../../SUPPORT.md)
 
 If you want to support maintenance of this repo and its reusable skills:
 

@@ -5,7 +5,7 @@ This repository is maintained in the open and kept free to use. If you need help
 ## Current Support Paths
 
 - Bug reports and actionable repo problems: open an issue in this repository
-- Contribution and change-process questions: see [CONTRIBUTING.md](/home/mitissa/code/ai-stacks/CONTRIBUTING.md)
+- Contribution and change-process questions: see [CONTRIBUTING.md](CONTRIBUTING.md)
 - General repository support and maintenance updates: use this guide as the current source of truth
 
 ## Bug Reports
