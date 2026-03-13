@@ -1,11 +1,17 @@
 # ai-stacks
 
 [![Repo PR Review](https://github.com/mtsanaissi/ai-stacks/actions/workflows/repo-pr-review.yml/badge.svg)](https://github.com/mtsanaissi/ai-stacks/actions/workflows/repo-pr-review.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](/home/mitissa/code/ai-stacks/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 `ai-stacks` is a library of reusable AI-oriented project templates, skills, and repo-local tooling.
 
-See [CONTRIBUTING.md](/home/mitissa/code/ai-stacks/CONTRIBUTING.md) for contribution expectations and [LICENSE](/home/mitissa/code/ai-stacks/LICENSE) for licensing.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution expectations and [LICENSE](LICENSE) for licensing.
+
+Support paths:
+- [Issues](https://github.com/mtsanaissi/ai-stacks/issues)
+- [Support guide](SUPPORT.md)
+- [GitHub Sponsors](https://github.com/sponsors/mtsanaissi)
+- [Buy Me a Coffee](https://buymeacoffee.com/mtsanaissi)
 
 The repo serves two purposes:
 
@@ -33,7 +39,7 @@ Instead, it packages reusable project-starting material and repo-local support a
 
 The stack templates are intentionally standalone and do not depend on each other.
 
-For repo-local usage, `skills/` is the canonical source and `.agents/skills/` is a managed mirror for only the skills listed in [.agents/skills/selected-skills.txt](/home/mitissa/code/ai-stacks/.agents/skills/selected-skills.txt).
+For repo-local usage, `skills/` is the canonical source and `.agents/skills/` is a managed mirror for only the skills listed in [.agents/skills/selected-skills.txt](.agents/skills/selected-skills.txt).
 
 ## Template Model
 
@@ -71,7 +77,7 @@ python3 tools/agent_docs/validate_agent_files.py
 
 ## Local Skill Sync
 
-If you want selected repo-owned skills to be usable inside this repo, keep the source in `skills/` and list the enabled subset in [.agents/skills/selected-skills.txt](/home/mitissa/code/ai-stacks/.agents/skills/selected-skills.txt).
+If you want selected repo-owned skills to be usable inside this repo, keep the source in `skills/` and list the enabled subset in [.agents/skills/selected-skills.txt](.agents/skills/selected-skills.txt).
 
 Sync the selected skills into `.agents/skills/` with:
 
@@ -120,11 +126,11 @@ Smoke test:
 python3 tools/mcp_server/test_client.py
 ```
 
-More detail is in [README.md](/home/mitissa/code/ai-stacks/tools/mcp_server/README.md).
+More detail is in [README.md](tools/mcp_server/README.md).
 
 ## Pre-commit
 
-The root [.pre-commit-config.yaml](/home/mitissa/code/ai-stacks/.pre-commit-config.yaml) includes:
+The root [.pre-commit-config.yaml](.pre-commit-config.yaml) includes:
 
 - basic file hygiene hooks
 - agent-file alignment validation
@@ -141,7 +147,7 @@ pre-commit run --all-files
 
 ## GitHub PR Review Workflow
 
-The repo includes a real PR review workflow at [.github/workflows/repo-pr-review.yml](/home/mitissa/code/ai-stacks/.github/workflows/repo-pr-review.yml).
+The repo includes a real PR review workflow at [.github/workflows/repo-pr-review.yml](.github/workflows/repo-pr-review.yml).
 
 It has two layers:
 
@@ -219,6 +225,18 @@ Mechanical-only examples include:
 - workflow-only changes
 - prompt-only changes
 - root `.gitignore` or root `.pre-commit-config.yaml` changes
+
+## Support
+
+For bugs, broken docs, or workflow issues:
+
+- [Open an issue](https://github.com/mtsanaissi/ai-stacks/issues)
+- [Read the support guide](SUPPORT.md)
+
+If you want to support ongoing maintenance:
+
+- [GitHub Sponsors](https://github.com/sponsors/mtsanaissi)
+- [Buy Me a Coffee](https://buymeacoffee.com/mtsanaissi)
 
 ## Current Focus
 
