@@ -50,3 +50,15 @@ This skill draws ideas from two source skills, adapted for a model-agnostic repo
 From `memory-management`, it borrows the emphasis on durable file organization and templates.
 
 From `lessons-learned`, it borrows the explicit recall/capture phases, create-vs-update discipline, and the idea that reusable memory capture is a non-replaceable step.
+
+## Support
+
+If you hit a bug or a documentation problem while using this skill in `ai-stacks`:
+
+- [Open an issue](https://github.com/mtsanaissi/ai-stacks/issues)
+- [Read the support guide](/home/mitissa/code/ai-stacks/SUPPORT.md)
+
+If you want to support maintenance of this repo and its reusable skills:
+
+- [GitHub Sponsors](https://github.com/sponsors/mtsanaissi)
+- [Buy Me a Coffee](https://buymeacoffee.com/mtsanaissi)

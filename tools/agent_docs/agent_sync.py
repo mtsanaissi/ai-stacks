@@ -205,4 +205,3 @@ def normalize_body(text: str) -> str:
 
 def parse_generic_file(path: Path) -> tuple[str, str, list[tuple[str, str]]]:
     return parse_agents_file(path)
-
