@@ -15,6 +15,11 @@ repos:
         entry: python3 tools/agent_docs/validate_agent_files.py
         language: system
         pass_filenames: false
+      - id: validate-selected-local-skill-sync
+        name: validate selected local skill sync
+        entry: python3 tools/skills/sync_selected_skills.py --check
+        language: system
+        pass_filenames: false
       - id: validate-template-completeness
         name: validate template completeness
         entry: python3 tools/template_checks/validate_templates.py

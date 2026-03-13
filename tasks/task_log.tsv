@@ -1,0 +1,11 @@
+ts	id	action	actor	note
+2026-03-12T20:54:26Z	T-001	create	codex	Created follow-up task for adding the missing pre-commit selected-skill sync validation.
+2026-03-12T20:54:26Z	T-002	create	codex	Created follow-up task for expanding PR workflow path filters to cover root docs.
+2026-03-12T20:54:26Z	T-003	create	codex	Created follow-up task for separating deterministic validation from AI PR review workflow responsibilities.
+2026-03-12T20:54:26Z	T-004	create	codex	Created follow-up task for adding lightweight contribution templates.
+2026-03-12T20:56:16Z	T-001	start	codex	Started work on adding the selected local skill sync pre-commit hook.
+2026-03-12T20:56:29Z	T-001	complete	codex	Added the selected local skill sync pre-commit hook and verified the repo checks still pass.
+2026-03-13T12:41:57Z	T-005	create	codex	Created a small fix task for the Gemini CLI action auth input mismatch.
+2026-03-13T12:41:57Z	T-005	complete	codex	Updated the workflow to use the correct gemini_api_key action input.
+2026-03-13T13:18:14Z	T-006	create	codex	Created a small fix task for replacing the unsupported Gemini action wrapper usage.
+2026-03-13T13:18:14Z	T-006	complete	codex	Replaced the Gemini action wrapper with explicit CLI execution and separate PR commenting.
