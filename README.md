@@ -25,7 +25,7 @@ The repo serves two purposes:
 - `tools/agent_docs/`: sync and validation scripts for `AGENTS.md`, `CLAUDE.md`, and `GEMINI.md`
 - `tools/template_checks/`: shared template completeness checks
 - `tools/mcp_server/`: local MCP server, setup docs, and smoke-test client
-- `.agents/checks/`: vendor-neutral review criteria used by humans, agents, and workflows
+- `.continue/checks/`: vendor-neutral review criteria used by humans, agents, and workflows
 
 ## What Lives Here
 
@@ -55,7 +55,7 @@ Each stack is expected to include:
 - `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`
 - ignore rules
 - pre-commit config
-- `.agents/checks/`
+- `.continue/checks/`
 - workflow templates
 - stack-specific docs
 - a local `README.md` with copy/update guidance

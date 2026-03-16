@@ -15,7 +15,7 @@ This repository is a library of reusable AI-oriented project templates and skill
 - `skills/`: reusable agent skills
 - `tools/`: local utilities and repo-specific automation
 - `tools/mcp_server/`: local MCP server code, setup docs, and smoke-test client
-- `.agents/checks/`: vendor-neutral review prompts and expectations
+- `.continue/checks/`: vendor-neutral review prompts and expectations
 
 ## Working Rules
 

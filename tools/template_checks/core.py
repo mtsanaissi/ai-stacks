@@ -31,7 +31,7 @@ REQUIREMENTS: dict[str, TemplateRequirement] = {
             ".pre-commit-config.yaml",
             "package.json",
         ),
-        required_dirs=(".agents/checks", ".github/workflows", "docs"),
+        required_dirs=(".continue/checks", ".github/workflows", "docs"),
         required_readme_sections=("What To Copy", "Included", "Update After Copying", "MCP Suggestions"),
     ),
     "nextjs": TemplateRequirement(
@@ -44,7 +44,7 @@ REQUIREMENTS: dict[str, TemplateRequirement] = {
             ".pre-commit-config.yaml",
             "package.json",
         ),
-        required_dirs=(".agents/checks", ".github/workflows", "docs"),
+        required_dirs=(".continue/checks", ".github/workflows", "docs"),
         required_readme_sections=("What To Copy", "Included", "Update After Copying", "MCP Suggestions"),
     ),
     "python": TemplateRequirement(
@@ -57,7 +57,7 @@ REQUIREMENTS: dict[str, TemplateRequirement] = {
             ".pre-commit-config.yaml",
             "pyproject.toml",
         ),
-        required_dirs=(".agents/checks", ".github/workflows", "docs"),
+        required_dirs=(".continue/checks", ".github/workflows", "docs"),
         required_readme_sections=("What To Copy", "Included", "Update After Copying", "MCP Suggestions"),
     ),
     "powerbi": TemplateRequirement(
@@ -69,7 +69,7 @@ REQUIREMENTS: dict[str, TemplateRequirement] = {
             ".gitignore",
             ".pre-commit-config.yaml",
         ),
-        required_dirs=(".agents/checks", ".github/workflows", "docs"),
+        required_dirs=(".continue/checks", ".github/workflows", "docs"),
         required_readme_sections=("What To Copy", "Included", "Update After Copying", "MCP Suggestions"),
     ),
 }

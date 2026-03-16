@@ -15,7 +15,7 @@ Use this file as the root instruction file for maintaining the `ai-stacks` repos
 - `skills/`: reusable agent skills
 - `tools/`: local utilities and repo-specific automation
 - `tools/mcp_server/`: local MCP server code, setup docs, and smoke-test client
-- `.agents/checks/`: vendor-neutral review prompts and expectations
+- `.continue/checks/`: vendor-neutral review prompts and expectations
 
 ## Working Rules
 

@@ -15,7 +15,7 @@ Minimum expected contents:
 - Root agent files: `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`
 - Ignore rules appropriate for the stack
 - Validation commands or scripts appropriate for the stack
-- AI review checks under `.agents/checks/` when the stack benefits from them
+- AI review checks under `.continue/checks/` when the stack benefits from them
 - CI workflow templates
 - Long-form docs for coding, testing, review, or delivery expectations
 - A template `README.md` with copy instructions and immediate follow-up edits

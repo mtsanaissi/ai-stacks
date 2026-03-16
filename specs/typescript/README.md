@@ -13,7 +13,7 @@ Copy the full contents of this folder into the root of the new repository.
 - Root agent files for Codex-style agents, Claude Code, and Gemini CLI
 - `.gitignore`
 - `.pre-commit-config.yaml`
-- `.agents/checks/` review prompts
+- `.continue/checks/` review prompts
 - GitHub workflow templates
 - Starter `package.json`
 - Docs for coding standards, testing, and tooling
