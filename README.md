@@ -1,7 +1,6 @@
 # ai-stacks
 
 [![Repo Validation](https://github.com/mtsanaissi/ai-stacks/actions/workflows/repo-validation.yml/badge.svg)](https://github.com/mtsanaissi/ai-stacks/actions/workflows/repo-validation.yml)
-[![Repo PR Review](https://github.com/mtsanaissi/ai-stacks/actions/workflows/repo-pr-review.yml/badge.svg)](https://github.com/mtsanaissi/ai-stacks/actions/workflows/repo-pr-review.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 `ai-stacks` is a library of reusable AI-oriented project templates, skills, and repo-local tooling.
@@ -151,9 +150,7 @@ pre-commit run --all-files
 
 ## GitHub Workflows
 
-The repo includes a standalone validation workflow at [.github/workflows/repo-validation.yml](.github/workflows/repo-validation.yml) and a separate AI PR review workflow at [.github/workflows/repo-pr-review.yml](.github/workflows/repo-pr-review.yml).
-
-### Repo Validation
+The repo includes a standalone validation workflow at [.github/workflows/repo-validation.yml](.github/workflows/repo-validation.yml).
 
 The validation workflow runs deterministic checks for tracked repo changes on:
 
@@ -167,80 +164,13 @@ It validates:
 - selected local skill sync
 - template completeness
 
-### Repo PR Review
-
-The AI review workflow is PR-focused and runs separately from validation.
-
-The AI review focuses on:
-
-- template drift
-- contradictory instructions
-- stale placeholders
-- misaligned commands, docs, and manifests
-- skill contract regressions
-
-The AI review is skipped when:
-
-- the PR is draft
-- `GEMINI_API_KEY` is missing
-- the change set is classified as mechanical only
-
-### Required GitHub Secret
-
-Add this repository secret:
-
-- `GEMINI_API_KEY`
-
-Path:
-
-- `Settings -> Secrets and variables -> Actions -> Secrets`
-
-### Optional GitHub Variable
-
-You can set the Gemini model without editing the workflow by adding this repository variable:
-
-- `GEMINI_MODEL`
-
-Recommended initial value:
-
-- `gemini-2.5-flash-lite`
-
-Path:
-
-- `Settings -> Secrets and variables -> Actions -> Variables`
-
-If no variable is set, the workflow already falls back to `gemini-2.5-flash-lite`.
-
-### Manual Workflow Testing
-
-Both workflows support `workflow_dispatch`, so you can test deterministic validation or AI review without opening a PR.
+Repo-specific AI PR review is intentionally not enabled in this repository.
 
 To run validation manually in GitHub:
 
 1. Go to `Actions`
 2. Open `Repo Validation`
 3. Click `Run workflow`
-
-To run AI review manually in GitHub:
-
-1. Go to `Actions`
-2. Open `Repo PR Review`
-3. Click `Run workflow`
-4. Optionally provide `review_paths`
-
-Example `review_paths` input:
-
-```text
-AGENTS.md
-specs/nextjs/README.md
-tools/template_checks/core.py
-```
-
-Mechanical-only examples include:
-
-- workflow-only changes
-- prompt-only changes
-- root `.gitignore` or root `.pre-commit-config.yaml` changes
 
 ## Support
 
