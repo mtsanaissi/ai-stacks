@@ -2,7 +2,7 @@
 
 This folder is a standalone Power BI project-root template.
 
-Use it when starting a Power BI-focused repository that needs AI agent instructions, review guidance, governance reminders, and workflow scaffolding.
+Use it when starting a Power BI-focused repository that needs thin root agent instructions, stack project conventions, governance reminders, and workflow scaffolding.
 
 ## What To Copy
 
@@ -19,9 +19,10 @@ Copy the full contents of this folder into the root of the new repository.
 
 ## Update After Copying
 
-- Add the real publishing workflow, workspace targets, and governance requirements.
-- Document data sources, refresh expectations, and gateway assumptions.
-- Extend report and model guidance with the project's naming rules, metric catalog, and accessibility standards.
+- Add the real publishing workflow, workspace targets, gateway owners, and governance requirements.
+- Document data sources, refresh expectations, semantic model ownership, and embedded or service-principal assumptions.
+- Extend the docs with the project's naming rules, metric catalog, accessibility expectations, and release sign-off steps.
+- Add a repo-local `powerbi` skill only if the destination repository wants the same skill-first agent workflow used in this template library.
 - Replace placeholder AI review workflow steps with the real action or check setup.
 
 ## MCP Suggestions
