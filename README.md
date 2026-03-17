@@ -80,6 +80,8 @@ python3 tools/agent_docs/validate_agent_files.py
 
 If you want selected repo-owned skills to be usable inside this repo, keep the source in `skills/` and list the enabled subset in [.agents/skills/selected-skills.txt](.agents/skills/selected-skills.txt).
 
+This repository intentionally mirrors only a small repo-operating subset there by default; stack-specific skills can remain repo-owned and unselected unless the manifest is deliberately expanded.
+
 Sync the selected skills into `.agents/skills/` with:
 
 ```bash

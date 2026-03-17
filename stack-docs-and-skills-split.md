@@ -130,6 +130,6 @@ specs/
 - Edit the skill first when changing deep stack guidance.
 - Edit stack spec docs first when changing project-template conventions.
 - Keep spec docs intentionally shorter than skill references, but substantial enough to guide a new project kickoff.
-- If a repo-owned skill is added, keep `.agents/skills/selected-skills.txt` and mirrored copies aligned with the sync mechanism.
+- Keep `.agents/skills/selected-skills.txt` and mirrored copies aligned with the sync mechanism; adding a repo-owned stack skill does not imply selecting it for this repository.
 - Do not make a copied spec depend on repo-local skills for correctness or safety.
 - Validation for rollout work should include agent-file alignment, skill sync consistency, and template validation.
