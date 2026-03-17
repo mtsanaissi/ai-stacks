@@ -2,7 +2,7 @@
 
 This folder is a standalone Next.js project-root template.
 
-Use it when starting a Next.js repository that needs AI agent instructions, app-router-oriented conventions, review guidance, and CI scaffolding.
+Use it when starting a Next.js repository that needs thin root agent instructions, stack project conventions, review guidance, and CI scaffolding.
 
 ## What To Copy
 
@@ -16,13 +16,14 @@ Copy the full contents of this folder into the root of the new repository.
 - `.continue/checks/` review prompts
 - GitHub workflow templates
 - Starter `package.json`
-- Docs for routing, server actions, UI patterns, performance, and deployment
+- Docs for project structure, naming, recommended project docs, validation, and deployment
 
 ## Update After Copying
 
 - Replace the placeholder package name and scripts in `package.json` if the project uses `pnpm`, Turbopack, Playwright, or a different test setup.
 - Update `docs/deployment.md` with the real hosting, env var, and release expectations.
-- Add domain-specific guidance for auth, data access, design system usage, and caching behavior if those are core to the project.
+- Fill in the recommended project docs listed in `docs/recommended-docs.md` with the real auth, data access, and architecture rules for the copied app.
+- Add a repo-local `nextjs` skill only if the destination repository wants the same skill-first agent workflow used in this template library.
 - Replace placeholder AI review workflow steps with the real action or check setup.
 
 ## MCP Suggestions
