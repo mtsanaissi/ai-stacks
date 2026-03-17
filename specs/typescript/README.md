@@ -20,7 +20,8 @@ Copy the full contents of this folder into the root of the new repository.
 
 ## Update After Copying
 
-- Replace the placeholder package name and scripts in `package.json` if the project uses `pnpm`, `bun`, Jest, or different lint commands.
+- Replace the placeholder package name in `package.json`.
+- Adjust scripts if the project uses `pnpm`, `bun`, Jest, or different lint commands.
 - Tighten the docs to reflect the project's architecture, boundary validation rules, and runtime model.
 - Add a repo-local `typescript` skill only if the destination repository wants the same skill-first agent workflow used in this template library.
 - Replace placeholder AI review workflow steps with the real action or check setup.

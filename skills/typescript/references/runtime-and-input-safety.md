@@ -7,7 +7,7 @@ TypeScript only protects checked code paths. Untrusted input still needs runtime
 - Validate all untrusted input at the process, API, message, or CLI boundary.
 - Keep environment variable parsing centralized and fail fast on invalid config.
 - Do not suppress security-relevant type errors with `any`, `@ts-ignore`, `as unknown as`, or blanket non-null assertions.
-- Avoid `eval`, `new Function`, dynamic `vm` execution, and dynamic imports or requires derived from user input or mutable config.
+- Avoid `eval`, `new Function`, dynamic `vm` execution, and dynamic imports or requires that are derived from user input or mutable config.
 - Guard against prototype pollution and unsafe object merges when traversing user-controlled structures.
 
 ## Review Hotspots

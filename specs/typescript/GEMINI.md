@@ -28,4 +28,4 @@ Use this file as the Gemini CLI instruction file for a TypeScript project.
 
 ## Tool-Specific Notes
 
-- Gemini CLI should keep TypeScript commands, docs, and validation steps aligned.
+- Gemini CLI should keep TypeScript commands, docs, and validation steps aligned with the actual installed toolchain.
