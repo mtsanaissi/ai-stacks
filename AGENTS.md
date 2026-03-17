@@ -27,8 +27,9 @@ This repository is a library of reusable AI-oriented project templates and skill
 - Add new structure only when it clearly improves reuse, consistency, or maintainability.
 - When updating a stack template, keep it self-contained and do not make it depend on another folder in this repo.
 - When changing commands in agent files, keep starter manifest files and docs aligned.
-- When changing shared expectations across templates, check for drift in related `AGENTS.md`, `CLAUDE.md`, and `GEMINI.md` files.
-- Treat `AGENTS.md` as the canonical source in each folder and keep provider-specific differences limited.
+- When changing shared expectations across templates, check related `AGENTS.md` files and adjacent docs for drift.
+- Treat `AGENTS.md` as the sole checked-in canonical agent artifact in each folder. If a destination repo wants `CLAUDE.md`, `GEMINI.md`, or another tool-specific entrypoint name, document optional copy or rename guidance instead of committing duplicates here.
+- Keep stack specs standalone and avoid assuming one package manager, repo shape, app topology, or deployment model beyond the stack itself unless the file clearly marks it as a starter default.
 
 ## Skills
 

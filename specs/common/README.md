@@ -6,7 +6,7 @@ It intentionally avoids language-specific or software-only assumptions. Use it f
 
 Contents:
 
-- Root-level AI agent files
+- Root-level `AGENTS.md` guidance
 - Generic workflow and collaboration docs
 - Generic review and decision-tracking guidance
 
@@ -16,6 +16,7 @@ Copy the contents of this folder into the root of a new project when the project
 
 ## Update After Copying
 
-- Rewrite the project purpose and scope in `AGENTS.md`, `CLAUDE.md`, and `GEMINI.md`.
+- Rewrite the project purpose and scope in `AGENTS.md` before relying on it.
+- If a destination tool expects `CLAUDE.md`, `GEMINI.md`, or another entrypoint filename, copy or rename the tailored `AGENTS.md` only after deciding that convention in the destination repo.
 - Replace generic process expectations in `docs/workflow.md` with the real workflow for that project.
 - Start using `docs/decision-log.md` once project-level decisions begin to accumulate.

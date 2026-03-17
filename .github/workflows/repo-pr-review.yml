@@ -10,9 +10,7 @@ on:
       - ".gitignore"
       - ".pre-commit-config.yaml"
       - "AGENTS.md"
-      - "CLAUDE.md"
       - "CONTRIBUTING.md"
-      - "GEMINI.md"
       - "README.md"
       - "skills/**"
       - "specs/**"
@@ -86,10 +84,6 @@ jobs:
           def is_mechanical(path: str) -> bool:
               if path in mechanical_paths:
                   return True
-              if path.endswith("/CLAUDE.md") or path.endswith("/GEMINI.md"):
-                  return True
-              if path in {"CLAUDE.md", "GEMINI.md"}:
-                  return True
               if path.startswith(".github/workflows/") or path.startswith(".github/prompts/"):
                   return True
               return False
@@ -141,7 +135,7 @@ jobs:
           ]
           if any(path.startswith("skills/") for path in changed):
               checks.append("- Also apply `.continue/checks/skill-review.md` because the PR touches `skills/`.")
-          if any(path.endswith("/AGENTS.md") or path.endswith("/CLAUDE.md") or path.endswith("/GEMINI.md") or path in {"AGENTS.md", "CLAUDE.md", "GEMINI.md"} for path in changed):
+          if any(path.endswith("/AGENTS.md") or path == "AGENTS.md" for path in changed):
               checks.append("- Also apply `.continue/checks/agent-file-alignment.md` because the PR touches agent instruction files.")
           if any(path.startswith("tools/") for path in changed):
               checks.append("- Pay extra attention to whether repo automation and validation scripts still match the documented workflow.")

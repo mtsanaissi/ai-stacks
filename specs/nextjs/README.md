@@ -10,7 +10,7 @@ Copy the full contents of this folder into the root of the new repository.
 
 ## Included
 
-- Root agent files for Codex-style agents, Claude Code, and Gemini CLI
+- Root `AGENTS.md` guidance that a destination repo can optionally copy or rename for specific tools
 - `.gitignore`
 - `.pre-commit-config.yaml`
 - `.continue/checks/` review prompts
@@ -21,8 +21,10 @@ Copy the full contents of this folder into the root of the new repository.
 ## Update After Copying
 
 - Replace the placeholder package name and scripts in `package.json` if the project uses `pnpm`, Turbopack, Playwright, or a different test setup.
+- Treat the included `npm` scripts, workflow steps, and review prompts as starter defaults until the destination repo replaces them with its real toolchain and release flow.
 - Update `docs/deployment.md` with the real hosting, env var, and release expectations.
 - Fill in the recommended project docs listed in `docs/recommended-docs.md` with the real auth, data access, and architecture rules for the copied app.
+- If the destination repo wants `CLAUDE.md`, `GEMINI.md`, or another tool-specific entrypoint filename, copy or rename the tailored `AGENTS.md` after deciding that convention.
 - Add a repo-local `nextjs` skill only if the destination repository wants the same skill-first agent workflow used in this template library.
 - Replace placeholder AI review workflow steps with the real action or check setup.
 

@@ -3,50 +3,37 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from agent_sync import TARGET_DIRS, normalize_body, parse_generic_file
-
-
-ALLOWED_EXTRA_SECTION = "## Tool-Specific Notes"
+ROOT = Path(__file__).resolve().parents[2]
+TARGET_DIRS = [
+    ROOT,
+    ROOT / "specs" / "common",
+    ROOT / "specs" / "typescript",
+    ROOT / "specs" / "nextjs",
+    ROOT / "specs" / "python",
+    ROOT / "specs" / "powerbi",
+]
+PROVIDER_FILES = ("CLAUDE.md", "GEMINI.md")
 
 
 def validate_folder(folder: Path) -> list[str]:
     errors: list[str] = []
     agents_path = folder / "AGENTS.md"
-    claude_path = folder / "CLAUDE.md"
-    gemini_path = folder / "GEMINI.md"
+    if not agents_path.is_file():
+        errors.append(f"{agents_path}: missing required canonical agent file")
+        return errors
 
-    for path in (agents_path, claude_path, gemini_path):
-        if not path.is_file():
-            errors.append(f"{path}: missing required agent file")
-            return errors
+    lines = agents_path.read_text(encoding="utf-8").splitlines()
+    if not lines or not lines[0].startswith("# "):
+        errors.append(f"{agents_path}: must start with a level-1 heading")
+    if not any(line.startswith("## ") for line in lines):
+        errors.append(f"{agents_path}: must include at least one level-2 section")
 
-    _, _, agent_sections = parse_generic_file(agents_path)
-    for other_path in (claude_path, gemini_path):
-        _, _, other_sections = parse_generic_file(other_path)
-
-        expected_headings = [heading for heading, _ in agent_sections] + [ALLOWED_EXTRA_SECTION]
-        actual_headings = [heading for heading, _ in other_sections]
-        if actual_headings != expected_headings:
-            errors.append(
-                f"{other_path}: section headings differ from AGENTS.md; expected {expected_headings}, got {actual_headings}"
-            )
-            continue
-
-        for (agent_heading, agent_body), (other_heading, other_body) in zip(
-            agent_sections, other_sections[:-1], strict=True
-        ):
-            if agent_heading != other_heading:
-                errors.append(
-                    f"{other_path}: section heading mismatch for shared content: {agent_heading} vs {other_heading}"
-                )
-                continue
-            if normalize_body(agent_body) != normalize_body(other_body):
-                errors.append(
-                    f"{other_path}: shared section {agent_heading} differs from AGENTS.md"
-                )
-
-        if len(other_sections) > len(agent_sections) + 1:
-            errors.append(f"{other_path}: contains unexpected extra sections")
+    provider_paths = [folder / file_name for file_name in PROVIDER_FILES if (folder / file_name).exists()]
+    if provider_paths:
+        joined = ", ".join(str(path) for path in provider_paths)
+        errors.append(
+            f"{folder}: unexpected checked-in provider-specific agent files found: {joined}"
+        )
 
     return errors
 
@@ -61,7 +48,7 @@ def main() -> None:
             print(error)
         sys.exit(1)
 
-    print("All agent file triplets are aligned.")
+    print("All canonical AGENTS.md files are present and no checked-in provider-specific duplicates remain.")
 
 
 if __name__ == "__main__":
