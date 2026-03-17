@@ -19,9 +19,9 @@ Do not use this skill for generic product planning or infrastructure tasks unles
 
 - Read [references/boundaries-and-inputs.md](references/boundaries-and-inputs.md) for trust boundaries, input validation, subprocess usage, config loading, logging, secrets, and serialization risk.
 - Read [references/module-and-type-shape.md](references/module-and-type-shape.md) for package layout, imports, type usage, data-model boundaries, and framework leakage into domain code.
-- Read [references/packaging-and-tooling.md](references/packaging-and-tooling.md) for `pyproject.toml`, dependency choices, entry points, environment tooling, and packaging assumptions.
-- Read [references/testing-strategy.md](references/testing-strategy.md) for pytest shape, failure-path coverage, fixtures, integration boundaries, and regression checks.
-- Read [references/validation-matrix.md](references/validation-matrix.md) before closing work so the validation matches the change.
+- Review [references/packaging-and-tooling.md](references/packaging-and-tooling.md) for `pyproject.toml`, dependency choices, entry points, environment tooling, and packaging assumptions.
+- Consult [references/testing-strategy.md](references/testing-strategy.md) for pytest shape, failure-path coverage, fixtures, integration boundaries, and regression checks.
+- Before closing work, check [references/validation-matrix.md](references/validation-matrix.md) so the validation matches the change.
 
 ## Workflow
 
