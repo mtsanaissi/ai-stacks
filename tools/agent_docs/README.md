@@ -1,26 +1,24 @@
-# Agent File Sync
+# Agent File Validation
 
-This folder contains tooling for keeping `AGENTS.md`, `CLAUDE.md`, and `GEMINI.md` aligned.
+This folder contains tooling for enforcing the repo's checked-in `AGENTS.md` contract.
 
 ## Policy
 
-- `AGENTS.md` is the canonical source in each folder.
-- `CLAUDE.md` and `GEMINI.md` should keep the same core section structure as `AGENTS.md`.
-- Small provider-specific differences are allowed through a dedicated `## Tool-Specific Notes` section and file title/intro text.
-- Shared sections should stay textually identical after normalization.
+- `AGENTS.md` is the only checked-in canonical instruction file in each tracked folder.
+- This repo does not keep checked-in `CLAUDE.md` or `GEMINI.md` duplicates.
+- If a copied template wants another tool-specific entrypoint filename, copy or rename `AGENTS.md` in the destination repo after tailoring the content.
+- Validation should catch missing canonical files and stale checked-in provider-specific duplicates early.
 
 ## Scripts
 
-- `sync_agent_files.py`: regenerate `CLAUDE.md` and `GEMINI.md` from each folder's `AGENTS.md`
-- `validate_agent_files.py`: verify triplets are present and structurally aligned
+- `validate_agent_files.py`: verify tracked folders contain `AGENTS.md`, basic heading structure, and no checked-in provider-specific duplicates
 
 ## Typical Usage
 
 ```bash
-python3 tools/agent_docs/sync_agent_files.py
 python3 tools/agent_docs/validate_agent_files.py
 ```
 
 ## Pre-commit
 
-The repo root `.pre-commit-config.yaml` runs `validate_agent_files.py` as a local hook so drift is caught before commit.
+The repo root `.pre-commit-config.yaml` runs `validate_agent_files.py` as a local hook so canonical-agent drift is caught before commit.

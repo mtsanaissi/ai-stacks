@@ -23,7 +23,7 @@ The repo serves two purposes:
 
 - `specs/`: standalone project-root templates for `common`, `typescript`, `nextjs`, `python`, and `powerbi`
 - `skills/`: reusable agent skills, including `task-ledger`
-- `tools/agent_docs/`: sync and validation scripts for `AGENTS.md`, `CLAUDE.md`, and `GEMINI.md`
+- `tools/agent_docs/`: validation scripts and guidance for canonical `AGENTS.md` files
 - `tools/template_checks/`: shared template completeness checks
 - `tools/mcp_server/`: local MCP server, setup docs, and smoke-test client
 - `.continue/checks/`: vendor-neutral review criteria used by humans, agents, and workflows
@@ -53,26 +53,27 @@ Each stack template should be:
 
 Each stack is expected to include:
 
-- `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`
+- `AGENTS.md` as the checked-in canonical agent file
 - ignore rules
 - pre-commit config
 - `.continue/checks/`
-- workflow templates
+- starter workflow templates
 - stack-specific docs
 - a local `README.md` with copy/update guidance
+
+Starter manifests, workflows, and review prompts are templates, not finished integrations. Copying teams are expected to replace placeholder values, commands, and workflow steps before relying on them.
 
 ## Agent Files
 
 Every folder that has agent instruction files follows this rule:
 
-- `AGENTS.md` is the canonical source
-- `CLAUDE.md` and `GEMINI.md` are synced from it
-- provider-specific differences should stay limited to the title, intro, and `## Tool-Specific Notes`
+- `AGENTS.md` is the only checked-in canonical instruction file in this repo
+- copied templates may optionally copy or rename `AGENTS.md` to another entrypoint filename in the destination repo if a tool expects it
+- stack templates should stay standalone and avoid implying one package manager, repo shape, or deployment target unless the file clearly marks it as a starter default
 
 Useful commands:
 
 ```bash
-python3 tools/agent_docs/sync_agent_files.py
 python3 tools/agent_docs/validate_agent_files.py
 ```
 
@@ -136,7 +137,7 @@ More detail is in [README.md](tools/mcp_server/README.md).
 The root [.pre-commit-config.yaml](.pre-commit-config.yaml) includes:
 
 - basic file hygiene hooks
-- agent-file alignment validation
+- canonical agent-file validation
 - selected local skill sync validation
 - template completeness validation
 
@@ -162,7 +163,7 @@ The validation workflow runs deterministic checks for tracked repo changes on:
 
 It validates:
 
-- agent-file alignment
+- canonical agent-file rules
 - selected local skill sync
 - template completeness
 
@@ -237,7 +238,6 @@ tools/template_checks/core.py
 
 Mechanical-only examples include:
 
-- generated `CLAUDE.md` / `GEMINI.md` sync output
 - workflow-only changes
 - prompt-only changes
 - root `.gitignore` or root `.pre-commit-config.yaml` changes

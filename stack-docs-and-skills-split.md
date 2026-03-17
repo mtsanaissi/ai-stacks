@@ -11,9 +11,10 @@ Separate stack project-template conventions from deep agent operating guidance s
 - Treat each stack skill as the primary agent-facing source for deep implementation guidance.
 - Keep one primary skill per stack by default: `nextjs`, `python`, `typescript`, `powerbi`.
 - Store deep specifics in `skills/<stack>/references/`.
-- Keep `specs/*/AGENTS.md`, `CLAUDE.md`, and `GEMINI.md` thin. They should route to the stack skill when available and keep only always-hot guardrails.
+- Keep `specs/*/AGENTS.md` thin. It should route to the stack skill when available and keep only always-hot guardrails.
 - Treat `specs/*/docs/` as the canonical project-template conventions for that stack.
 - Keep `specs/*/docs/` copy-ready so a copied template still works even when the repo skill is unavailable.
+- Keep `AGENTS.md` as the only checked-in agent artifact in this repo; destination repos can optionally copy or rename it for tool-specific entrypoints after they tailor the content.
 
 ## Responsibilities
 
@@ -34,7 +35,7 @@ Separate stack project-template conventions from deep agent operating guidance s
   - `validation-matrix.md`
   - stack-specific boundary or review hotspot guides
 
-### `specs/*/AGENTS.md`, `CLAUDE.md`, `GEMINI.md`
+### `specs/*/AGENTS.md`
 
 - Keep commands and a short scope section.
 - Tell the agent to use the relevant stack skill when available and applicable.
@@ -62,7 +63,7 @@ Separate stack project-template conventions from deep agent operating guidance s
 
 - `skills/<stack>/references/` is the canonical source for deep agent operating guidance.
 - `specs/*/docs/` is the canonical source for project-template conventions.
-- `specs/*/AGENTS.md`, `CLAUDE.md`, and `GEMINI.md` are routing layers with only minimal always-hot rules.
+- `specs/*/AGENTS.md` is the checked-in routing layer with only minimal always-hot rules.
 
 ## Default Skill Shape
 
@@ -119,8 +120,6 @@ Use this layout for stack spec folders:
 specs/
   <stack>/
     AGENTS.md
-    CLAUDE.md
-    GEMINI.md
     docs/
       ...
 ```
@@ -132,4 +131,4 @@ specs/
 - Keep spec docs intentionally shorter than skill references, but substantial enough to guide a new project kickoff.
 - Keep `.agents/skills/selected-skills.txt` and mirrored copies aligned with the sync mechanism; adding a repo-owned stack skill does not imply selecting it for this repository.
 - Do not make a copied spec depend on repo-local skills for correctness or safety.
-- Validation for rollout work should include agent-file alignment, skill sync consistency, and template validation.
+- Validation for rollout work should include canonical agent-file validation, skill sync consistency, and template validation.

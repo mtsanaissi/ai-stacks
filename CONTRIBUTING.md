@@ -12,7 +12,7 @@ Contributions are most useful when they improve:
 - reusable skills
 - repo-local validation and maintenance tooling
 - documentation clarity and consistency
-- drift reduction across `AGENTS.md`, `CLAUDE.md`, and `GEMINI.md`
+- clarity and consistency around canonical `AGENTS.md` files and copy-after-edit guidance
 
 ## Before You Change Things
 
@@ -20,7 +20,7 @@ Contributions are most useful when they improve:
 - Prefer existing repo patterns over new abstractions.
 - Avoid behavior-changing or user-visible assumptions unless they are clearly documented.
 - When updating a stack template, keep it self-contained and do not make it depend on another folder in this repo.
-- When changing shared expectations, check for drift across related agent files and docs.
+- When changing shared expectations, check for drift across related `AGENTS.md` files and adjacent docs.
 
 ## How To Contribute
 
@@ -36,7 +36,7 @@ GitHub now includes lightweight issue and pull request templates that mirror thi
 Please keep pull requests easy to review:
 
 - separate unrelated work into different PRs
-- mention any docs, template, or agent-file drift you checked
+- mention any docs, template, or `AGENTS.md` drift you checked
 - include validation commands you ran
 - note anything intentionally left out
 

@@ -50,3 +50,10 @@ ts	id	action	actor	note
 2026-03-17T19:11:14Z	T-019	create	codex	Created follow-up task for tightening the Next.js scaffold to avoid unnecessary single-shape assumptions.
 2026-03-17T19:11:14Z	T-020	create	codex	Created follow-up task for tightening the Power BI scaffold to avoid unnecessary default assumptions and implied automation.
 2026-03-17T19:11:14Z	T-021	create	codex	Created rollout validation task for the provider-agnostic scaffold cleanup and stale-reference audit.
+2026-03-17T19:12:30Z	T-013	start	codex	Started defining the AGENTS-only scaffold policy before changing tooling and templates.
+2026-03-17T19:24:00Z	T-013	complete	codex	Defined the AGENTS-only scaffold policy in the repo docs and stack design note, including optional copy-or-rename guidance for destination repos and the standalone-template constraint.
+2026-03-17T19:24:00Z	T-015	start	codex	Started updating repo docs, review prompts, validators, and agent-doc tooling to enforce canonical AGENTS-only files.
+2026-03-17T19:24:00Z	T-016	start	codex	Started adding explicit starter-default and AGENTS copy-or-rename guidance to shared template docs.
+2026-03-17T19:31:00Z	T-015	complete	codex	Rewrote the repo docs, review prompts, validators, workflows, and agent-doc tooling around canonical AGENTS-only files and updated the mirrored memory skill.
+2026-03-17T19:31:00Z	T-016	complete	codex	Added explicit starter-default and AGENTS copy-or-rename guidance across the shared template README files and common AGENTS template.
+2026-03-17T19:31:00Z	T-014	complete	codex	Deleted the checked-in CLAUDE.md and GEMINI.md files repo-wide after preserving the shared guidance in AGENTS.md and adjacent docs.

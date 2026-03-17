@@ -4,7 +4,7 @@ This folder contains local utilities and repo-specific automation.
 
 ## Layout
 
-- `agent_docs/`: sync and validation scripts for `AGENTS.md`, `CLAUDE.md`, and `GEMINI.md`
+- `agent_docs/`: validation scripts and policy notes for canonical `AGENTS.md` files
 - `skills/`: utilities for selectively mirroring repo-owned skills into `.agents/skills/`
 - `template_checks/`: shared template validation logic and command-line checks
 - `mcp_server/`: local MCP server and supporting repo template tools

@@ -12,7 +12,7 @@ Every stack template should be complete enough to copy into a new repository roo
 
 Minimum expected contents:
 
-- Root agent files: `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`
+- Root `AGENTS.md` as the checked-in canonical agent file
 - Ignore rules appropriate for the stack
 - Validation commands or scripts appropriate for the stack
 - AI review checks under `.continue/checks/` when the stack benefits from them
@@ -23,6 +23,7 @@ Minimum expected contents:
 Minimum expected quality:
 
 - The template stands on its own and does not depend on another folder in this repo.
+- The template does not assume one package manager, repo shape, application topology, or deployment model beyond the stack itself unless that choice is clearly labeled as a starter default.
 - Commands shown in agent files match the starter manifest files in the template.
 - Instructions prefer existing project patterns and avoid unnecessary abstraction.
 - The template is opinionated enough to be useful, but easy to trim down after copying.
@@ -31,5 +32,6 @@ Minimum expected quality:
 When copying a stack template into a new project:
 
 1. Copy the entire contents of the chosen `specs/<stack>/` folder into the new repository root.
-2. Trim files you do not need.
-3. Update tool commands, workflow names, and stack details to match the real project.
+2. Rewrite `AGENTS.md` for the real project before relying on it, and optionally copy or rename it for tool-specific entrypoints only if the destination repo wants that.
+3. Replace starter commands, workflow steps, placeholder metadata, and review prompts with the real project choices before relying on them.
+4. Trim files you do not need.

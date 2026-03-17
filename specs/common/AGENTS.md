@@ -5,6 +5,7 @@ This file is meant to live at the root of a generic work project.
 ## Scope
 
 - Use this file as the primary instruction entrypoint for AI agents.
+- If a destination tool expects another instruction filename, copy or rename this file only after rewriting it for the real project.
 - Follow existing project documents before introducing new structure.
 - Prefer the simplest process that keeps work clear, auditable, and easy to hand off.
 
@@ -17,6 +18,7 @@ This file is meant to live at the root of a generic work project.
 - Call out bad practices, risky shortcuts, or changes that diverge from common conventions for this type of project.
 - Reuse existing templates, documents, checklists, and workflows when they fit.
 - Add new structure only when it clearly improves reuse, consistency, or maintainability.
+- Treat any starter docs, workflows, or review prompts copied with this template as placeholders until the destination project replaces them with real process details.
 - Record important decisions and open questions in project docs.
 - Flag sensitive, irreversible, or externally visible actions before taking them.
 

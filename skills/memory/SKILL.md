@@ -56,7 +56,7 @@ Use this layout:
 docs/memory/
 ├── _index.md
 ├── run-pnpm-through-corepack.md
-├── update-agent-triplets-together.md
+├── keep-agents-canonical.md
 └── migrate-settings-before-seeding.md
 ```
 
@@ -164,7 +164,7 @@ Do not dump the full card body unless the user asks to inspect it.
 
 The canonical memory stays in `docs/memory/`.
 
-If the project already uses a small always-loaded agent file such as `AGENTS.md`, `CLAUDE.md`, or `GEMINI.md`, optionally promote only the most frequently reused constraints there, asking user for permission. Do not create or expand such a hot-cache file unless project conventions already support it.
+If the project already uses a small always-loaded agent file such as `AGENTS.md`, or a copied or renamed tool-specific equivalent, optionally promote only the most frequently reused constraints there, asking user for permission. Do not create or expand such a hot-cache file unless project conventions already support it.
 
 When a memory becomes stale:
 

@@ -17,15 +17,13 @@ class TemplateRequirement:
 
 REQUIREMENTS: dict[str, TemplateRequirement] = {
     "common": TemplateRequirement(
-        required_files=("AGENTS.md", "CLAUDE.md", "GEMINI.md", "README.md"),
+        required_files=("AGENTS.md", "README.md"),
         required_dirs=("docs",),
         required_readme_sections=("What To Copy", "Update After Copying"),
     ),
     "typescript": TemplateRequirement(
         required_files=(
             "AGENTS.md",
-            "CLAUDE.md",
-            "GEMINI.md",
             "README.md",
             ".gitignore",
             ".pre-commit-config.yaml",
@@ -37,8 +35,6 @@ REQUIREMENTS: dict[str, TemplateRequirement] = {
     "nextjs": TemplateRequirement(
         required_files=(
             "AGENTS.md",
-            "CLAUDE.md",
-            "GEMINI.md",
             "README.md",
             ".gitignore",
             ".pre-commit-config.yaml",
@@ -50,8 +46,6 @@ REQUIREMENTS: dict[str, TemplateRequirement] = {
     "python": TemplateRequirement(
         required_files=(
             "AGENTS.md",
-            "CLAUDE.md",
-            "GEMINI.md",
             "README.md",
             ".gitignore",
             ".pre-commit-config.yaml",
@@ -63,8 +57,6 @@ REQUIREMENTS: dict[str, TemplateRequirement] = {
     "powerbi": TemplateRequirement(
         required_files=(
             "AGENTS.md",
-            "CLAUDE.md",
-            "GEMINI.md",
             "README.md",
             ".gitignore",
             ".pre-commit-config.yaml",
