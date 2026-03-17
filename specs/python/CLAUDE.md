@@ -15,17 +15,37 @@ Use this file as the Claude Code project memory for a Python project.
 - Typecheck: `uv run pyright`
 - Test: `uv run pytest`
 
-## Change Rules
+## Non-Negotiables
 
-- Do not make behavior-changing or user-visible assumptions. Ask for clarification when intent is ambiguous or impact is material.
-- Prefer existing project patterns over inventing new abstractions.
-- Call out bad practices, risky shortcuts, or changes that diverge from common Python conventions.
-- Reuse existing modules, services, validators, fixtures, and test helpers when they fit.
-- Add new abstractions only when they clearly improve reuse, consistency, or maintainability.
-- Prefer standard library and simple abstractions first.
-- Validate external input at the boundary.
-- Keep modules small and responsibilities clear.
+- Verify real package APIs and version-specific behavior before coding. AI agents often mix stdlib, framework, and library guidance across versions.
+- Ask before changing auth flows, credential storage, packaging entry points, database migrations, or deployment/runtime assumptions.
+- Keep trust boundaries obvious. Validation belongs at entry points, not after the data has already crossed half the codebase.
+
+## Security and Data Handling
+
+- Treat type hints as documentation, not enforcement. Validate and normalize untrusted input at the boundary.
+- Never use `pickle`, `shelve`, or `multiprocessing.Connection.recv()` with untrusted data. Do not accept Python object graphs as a wire format across trust boundaries.
+- Use `secrets` for tokens, reset links, API keys, and any security-sensitive randomness. Do not use `random` for security decisions.
+- Do not use `http.server` for production or internet-facing traffic.
+- Prefer `subprocess` argument lists over shell command strings. Avoid `shell=True`; if shell use is unavoidable, keep untrusted input out of command construction and escape explicitly.
+- Treat attacker-controlled XML as hostile input. If XML must be parsed, bound size and parser behavior, and be aware of Expat version-related risks.
+- Keep secrets, access tokens, PII, and internal hostnames out of logs, exception messages, reprs, fixtures, notebooks, and committed sample payloads.
+- Do not accept logging configuration from untrusted sources. Python's logging configuration mechanisms can evaluate input.
+
+## Stack-Specific Failure Modes
+
+- Do not widen `sys.path`, rely on current-directory import precedence, or shadow stdlib module names to make imports "just work".
+- Keep configuration loading centralized and typed. Avoid scattered `os.getenv()` calls with silent fallbacks for security controls.
+- Avoid broad `except Exception` blocks around auth, payment, queueing, or network boundaries. Catch expected failures and preserve audit-relevant errors.
+- Do not invent framework helpers, request objects, or Pydantic behaviors that are not present in the installed version.
+- Prefer maintained dependencies with clear security posture. Do not add obscure packages or unreviewed code generators to save a small amount of boilerplate.
+- When writing CLI or automation entry points, keep import-time side effects minimal and avoid leaking local machine state into tests.
+
+## Validation
+
+- Run lint, typecheck, and tests after changes.
+- Add negative tests for malformed input, auth failures, subprocess boundaries, and serialization edges when those areas change.
 
 ## Tool-Specific Notes
 
-- Claude Code should preserve Python project conventions and keep validation steps explicit.
+- Claude Code should preserve validation boundaries and refuse convenience shortcuts that weaken Python's runtime safety.

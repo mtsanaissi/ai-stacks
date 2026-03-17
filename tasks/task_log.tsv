@@ -11,3 +11,18 @@ ts	id	action	actor	note
 2026-03-13T13:18:14Z	T-006	complete	codex	Replaced the Gemini action wrapper with explicit CLI execution and separate PR commenting.
 2026-03-13T14:30:20Z	T-002	start	codex	Started work on expanding PR workflow path coverage for root docs.
 2026-03-13T14:30:38Z	T-002	complete	codex	Expanded PR workflow path coverage to include root README and contribution docs.
+2026-03-17T12:12:45Z	T-007	create	codex	Created design task for the docs-as-canonical and skills-as-selective-loading stack template pattern.
+2026-03-17T12:12:45Z	T-008	create	codex	Created Next.js implementation task for docs refactor, stack skill, and thin agent routing files.
+2026-03-17T12:12:45Z	T-009	create	codex	Created Python implementation task for docs refactor, stack skill, and thin agent routing files.
+2026-03-17T12:12:45Z	T-010	create	codex	Created TypeScript implementation task for docs refactor, stack skill, and thin agent routing files.
+2026-03-17T12:12:45Z	T-011	create	codex	Created Power BI implementation task for docs refactor, stack skill, and thin agent routing files.
+2026-03-17T12:12:45Z	T-012	create	codex	Created rollout validation task for skill syncing, template alignment, and standalone-template verification.
+2026-03-17T12:34:22Z	T-007	start	codex	Started designing the stack skill structure and deciding how much capability should be split per language.
+2026-03-17T12:48:58Z	T-007	complete	codex	Added the shared stack docs and skills split design note and finalized the skill-first stack template pattern.
+2026-03-17T12:48:58Z	T-008	update	codex	Updated the Next.js task to reflect the chosen skill-first design with thin standalone spec docs.
+2026-03-17T12:48:58Z	T-009	update	codex	Updated the Python task to reflect the chosen skill-first design with thin standalone spec docs.
+2026-03-17T12:48:58Z	T-010	update	codex	Updated the TypeScript task to reflect the chosen skill-first design with thin standalone spec docs.
+2026-03-17T12:48:58Z	T-011	update	codex	Updated the Power BI task to reflect the chosen skill-first design with thin standalone spec docs.
+2026-03-17T12:48:58Z	T-012	update	codex	Updated the rollout validation task to verify skill selection, mirroring, and standalone template quality under the new design.
+2026-03-17T12:50:41Z	T-007	update	codex	Moved the stack docs and skills split design note to the repository root for temporary use during follow-up tasks.
+2026-03-17T12:56:05Z	T-007	update	codex	Clarified that stack spec docs are the canonical project-template conventions while stack skills remain the deep agent operating source.
