@@ -41,3 +41,12 @@ ts	id	action	actor	note
 2026-03-17T16:26:30Z	T-011	complete	codex	Added the repo-owned powerbi skill, slimmed the Power BI stack instruction triplet, rewrote the stack docs as project conventions, and validated the agent files and template completeness.
 2026-03-17T16:46:19Z	T-012	start	codex	Started rollout validation and aligned the task with the confirmed decision to keep stack skills repo-owned but unmirrored unless explicitly selected.
 2026-03-17T16:48:03Z	T-012	complete	codex	Confirmed the selected-skill mirror remains intentionally limited, clarified the rollout docs, recorded the decision in project memory, and re-ran the agent, template, and skill-sync validators successfully.
+2026-03-17T19:11:14Z	T-013	create	codex	Created policy task for moving the repo to a single checked-in AGENTS.md artifact and project-shape-agnostic scaffold guidance.
+2026-03-17T19:11:14Z	T-014	create	codex	Created implementation task for removing checked-in CLAUDE.md and GEMINI.md files repo-wide.
+2026-03-17T19:11:14Z	T-015	create	codex	Created repo-infrastructure task for updating docs, checks, validators, and agent-doc tooling to an AGENTS-only model.
+2026-03-17T19:11:14Z	T-016	create	codex	Created shared-template task for explicit bootstrap guidance and optional AGENTS copy or rename instructions.
+2026-03-17T19:11:14Z	T-017	create	codex	Created follow-up task for making the TypeScript scaffold provider-agnostic and project-shape-agnostic without variants.
+2026-03-17T19:11:14Z	T-018	create	codex	Created follow-up task for making the Python scaffold provider-agnostic and project-shape-agnostic without variants.
+2026-03-17T19:11:14Z	T-019	create	codex	Created follow-up task for tightening the Next.js scaffold to avoid unnecessary single-shape assumptions.
+2026-03-17T19:11:14Z	T-020	create	codex	Created follow-up task for tightening the Power BI scaffold to avoid unnecessary default assumptions and implied automation.
+2026-03-17T19:11:14Z	T-021	create	codex	Created rollout validation task for the provider-agnostic scaffold cleanup and stale-reference audit.
