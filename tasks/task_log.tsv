@@ -29,3 +29,5 @@ ts	id	action	actor	note
 2026-03-17T12:59:49Z	T-008	start	codex	Started implementing the Next.js skill-first stack refactor on a dedicated task branch.
 2026-03-17T13:06:22Z	T-008	complete	codex	Added the repo-owned nextjs skill, slimmed the Next.js stack instruction triplet, rewrote the stack docs as project conventions, and intentionally left the skill unselected for this repository.
 2026-03-17T13:07:48Z	T-008	update	codex	Added a concise README for the repo-owned nextjs skill while keeping it unselected for this repository.
+2026-03-17T13:51:31Z	T-003	start	codex	Started splitting deterministic validation into its own workflow and separating AI PR review responsibilities.
+2026-03-17T13:51:31Z	T-003	complete	codex	Added a standalone validation workflow for PRs, default-branch pushes, and manual runs, and updated README badges and workflow documentation.

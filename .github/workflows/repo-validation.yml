@@ -1,0 +1,60 @@
+name: Repo Validation
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - ".agents/**"
+      - ".github/prompts/**"
+      - ".github/workflows/**"
+      - ".gitignore"
+      - ".pre-commit-config.yaml"
+      - "AGENTS.md"
+      - "CLAUDE.md"
+      - "CONTRIBUTING.md"
+      - "GEMINI.md"
+      - "README.md"
+      - "skills/**"
+      - "specs/**"
+      - "tools/**"
+  push:
+    branches:
+      - main
+    paths:
+      - ".agents/**"
+      - ".github/prompts/**"
+      - ".github/workflows/**"
+      - ".gitignore"
+      - ".pre-commit-config.yaml"
+      - "AGENTS.md"
+      - "CLAUDE.md"
+      - "CONTRIBUTING.md"
+      - "GEMINI.md"
+      - "README.md"
+      - "skills/**"
+      - "specs/**"
+      - "tools/**"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate agent files
+        run: python3 tools/agent_docs/validate_agent_files.py
+
+      - name: Validate selected local skill sync
+        run: python3 tools/skills/sync_selected_skills.py --check
+
+      - name: Validate template completeness
+        run: python3 tools/template_checks/validate_templates.py

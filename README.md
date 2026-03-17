@@ -1,5 +1,6 @@
 # ai-stacks
 
+[![Repo Validation](https://github.com/mtsanaissi/ai-stacks/actions/workflows/repo-validation.yml/badge.svg)](https://github.com/mtsanaissi/ai-stacks/actions/workflows/repo-validation.yml)
 [![Repo PR Review](https://github.com/mtsanaissi/ai-stacks/actions/workflows/repo-pr-review.yml/badge.svg)](https://github.com/mtsanaissi/ai-stacks/actions/workflows/repo-pr-review.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
@@ -145,20 +146,27 @@ pre-commit install
 pre-commit run --all-files
 ```
 
-## GitHub PR Review Workflow
+## GitHub Workflows
 
-The repo includes a real PR review workflow at [.github/workflows/repo-pr-review.yml](.github/workflows/repo-pr-review.yml).
+The repo includes a standalone validation workflow at [.github/workflows/repo-validation.yml](.github/workflows/repo-validation.yml) and a separate AI PR review workflow at [.github/workflows/repo-pr-review.yml](.github/workflows/repo-pr-review.yml).
 
-It has two layers:
+### Repo Validation
 
-1. deterministic validation
-2. AI review with Gemini for substantive repo changes
+The validation workflow runs deterministic checks for tracked repo changes on:
 
-The workflow validates:
+- pull requests
+- pushes to the default branch (`main`)
+- manual `workflow_dispatch`
+
+It validates:
 
 - agent-file alignment
 - selected local skill sync
 - template completeness
+
+### Repo PR Review
+
+The AI review workflow is PR-focused and runs separately from validation.
 
 The AI review focuses on:
 
@@ -167,6 +175,12 @@ The AI review focuses on:
 - stale placeholders
 - misaligned commands, docs, and manifests
 - skill contract regressions
+
+The AI review is skipped when:
+
+- the PR is draft
+- `GEMINI_API_KEY` is missing
+- the change set is classified as mechanical only
 
 ### Required GitHub Secret
 
@@ -196,9 +210,15 @@ If no variable is set, the workflow already falls back to `gemini-2.5-flash-lite
 
 ### Manual Workflow Testing
 
-The workflow also supports `workflow_dispatch`, so you can test it without opening a PR.
+Both workflows support `workflow_dispatch`, so you can test deterministic validation or AI review without opening a PR.
 
-In GitHub:
+To run validation manually in GitHub:
+
+1. Go to `Actions`
+2. Open `Repo Validation`
+3. Click `Run workflow`
+
+To run AI review manually in GitHub:
 
 1. Go to `Actions`
 2. Open `Repo PR Review`
@@ -212,12 +232,6 @@ AGENTS.md
 specs/nextjs/README.md
 tools/template_checks/core.py
 ```
-
-The AI review step is skipped when:
-
-- the PR is draft
-- `GEMINI_API_KEY` is missing
-- the change set is classified as mechanical only
 
 Mechanical-only examples include:
 

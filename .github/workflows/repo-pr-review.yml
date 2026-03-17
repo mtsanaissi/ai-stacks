@@ -30,31 +30,8 @@ permissions:
   pull-requests: write
 
 jobs:
-  validate:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Validate agent files
-        run: python3 tools/agent_docs/validate_agent_files.py
-
-      - name: Validate selected local skill sync
-        run: python3 tools/skills/sync_selected_skills.py --check
-
-      - name: Validate template completeness
-        run: python3 tools/template_checks/validate_templates.py
-
   ai-review:
     runs-on: ubuntu-latest
-    needs: validate
     if: github.event_name == 'workflow_dispatch' || github.event.pull_request.draft == false
     steps:
       - name: Checkout
