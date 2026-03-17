@@ -29,6 +29,8 @@ Contributions are most useful when they improve:
 3. Explain the problem being solved, not just the file edits.
 4. Call out any tradeoffs, assumptions, or places where copy-after-edit guidance changed.
 
+GitHub now includes lightweight issue and pull request templates that mirror this process. Use them as a prompt, not as a signal that the repo has a heavier review or triage system than it actually does.
+
 ## Pull Request Notes
 
 Please keep pull requests easy to review:
@@ -37,6 +39,8 @@ Please keep pull requests easy to review:
 - mention any docs, template, or agent-file drift you checked
 - include validation commands you ran
 - note anything intentionally left out
+
+The PR template asks for the same information in a compact form: problem, change summary, validation, and any drift or handoff notes.
 
 ## Validation
 

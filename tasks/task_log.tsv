@@ -31,3 +31,5 @@ ts	id	action	actor	note
 2026-03-17T13:07:48Z	T-008	update	codex	Added a concise README for the repo-owned nextjs skill while keeping it unselected for this repository.
 2026-03-17T13:51:31Z	T-003	start	codex	Started splitting deterministic validation into its own workflow and separating AI PR review responsibilities.
 2026-03-17T13:51:31Z	T-003	complete	codex	Added a standalone validation workflow for PRs, default-branch pushes, and manual runs, and updated README badges and workflow documentation.
+2026-03-17T14:30:13Z	T-004	start	codex	Started adding lightweight GitHub contribution templates aligned with the repo's informal contribution process.
+2026-03-17T14:30:13Z	T-004	complete	codex	Added a pull request template, a lightweight change proposal issue template, and CONTRIBUTING guidance that explains their lightweight use.
