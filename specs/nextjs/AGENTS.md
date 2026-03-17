@@ -5,7 +5,7 @@ This file is meant to live at the root of a Next.js project.
 ## Scope
 
 - Follow `docs/project-structure.md`, `docs/naming-and-comments.md`, `docs/recommended-docs.md`, `docs/testing-and-validation.md`, and `docs/deployment.md`.
-- Use the repo-local `nextjs` skill when available and the task is materially about Next.js routing, rendering, caching, Server Actions, Route Handlers, or deployment behavior.
+- Use the repo-local `nextjs` skill when available and the task is materially about Next.js routing, rendering, caching, Server Actions, Route Handlers, or deployment behavior; otherwise follow the docs listed above directly.
 - Assume App Router patterns unless the repo already uses Pages Router in the affected area.
 
 ## Commands

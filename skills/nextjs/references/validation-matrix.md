@@ -7,7 +7,7 @@ Use the smallest validation set that still exercises the risk introduced by the 
 - Run project lint.
 - Run the relevant automated tests.
 
-## Server Actions, Route Handlers, Auth, Headers, Or Origins
+## Server Actions, Route Handlers, Auth, Headers, and Origins
 
 - Exercise the affected flow manually from the server boundary, not only from the UI.
 - Verify malformed input and unauthorized access paths.
