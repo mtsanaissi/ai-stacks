@@ -4,15 +4,15 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-TARGET_DIRS = [
-    ROOT,
-    ROOT / "specs" / "common",
-    ROOT / "specs" / "typescript",
-    ROOT / "specs" / "nextjs",
-    ROOT / "specs" / "python",
-    ROOT / "specs" / "powerbi",
-]
+SPECS_DIR = ROOT / "specs"
 PROVIDER_FILES = ("CLAUDE.md", "GEMINI.md")
+
+
+def target_dirs() -> list[Path]:
+    spec_dirs = sorted(
+        path for path in SPECS_DIR.iterdir() if path.is_dir()
+    )
+    return [ROOT, *spec_dirs]
 
 
 def validate_folder(folder: Path) -> list[str]:
@@ -39,8 +39,9 @@ def validate_folder(folder: Path) -> list[str]:
 
 
 def main() -> None:
+    discovered_targets = target_dirs()
     all_errors: list[str] = []
-    for folder in TARGET_DIRS:
+    for folder in discovered_targets:
         all_errors.extend(validate_folder(folder))
 
     if all_errors:
@@ -48,7 +49,14 @@ def main() -> None:
             print(error)
         sys.exit(1)
 
-    print("All canonical AGENTS.md files are present and no checked-in provider-specific duplicates remain.")
+    validated_dirs = ", ".join(
+        "." if folder == ROOT else str(folder.relative_to(ROOT))
+        for folder in discovered_targets
+    )
+    print(
+        "All canonical AGENTS.md files are present and no checked-in provider-specific "
+        f"duplicates remain in {len(discovered_targets)} directories: {validated_dirs}."
+    )
 
 
 if __name__ == "__main__":
