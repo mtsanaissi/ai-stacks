@@ -33,3 +33,5 @@ ts	id	action	actor	note
 2026-03-17T13:51:31Z	T-003	complete	codex	Added a standalone validation workflow for PRs, default-branch pushes, and manual runs, and updated README badges and workflow documentation.
 2026-03-17T14:30:13Z	T-004	start	codex	Started adding lightweight GitHub contribution templates aligned with the repo's informal contribution process.
 2026-03-17T14:30:13Z	T-004	complete	codex	Added a pull request template, a lightweight change proposal issue template, and CONTRIBUTING guidance that explains their lightweight use.
+2026-03-17T15:40:08Z	T-010	start	codex	Started implementing the TypeScript skill-first stack refactor on the current task branch.
+2026-03-17T15:42:55Z	T-010	complete	codex	Added the repo-owned typescript skill, slimmed the TypeScript stack instruction triplet, and tightened the standalone TypeScript template docs while keeping the skill unselected for this repository.
