@@ -2,7 +2,7 @@
 
 This folder is a standalone TypeScript project-root template.
 
-Use it when starting a TypeScript repository that needs AI agent instructions, code review guidance, CI scaffolding, and basic project conventions.
+Use it when starting a TypeScript repository that needs thin root agent instructions, stack project conventions, code review guidance, and CI scaffolding.
 
 ## What To Copy
 
@@ -21,8 +21,9 @@ Copy the full contents of this folder into the root of the new repository.
 ## Update After Copying
 
 - Replace the placeholder package name in `package.json`.
-- Adjust scripts to match the real toolchain if the project uses `pnpm`, `bun`, Jest, or different lint commands.
-- Tighten the docs to reflect the project's architecture, domain constraints, and deployment model.
+- Adjust scripts if the project uses `pnpm`, `bun`, Jest, or different lint commands.
+- Tighten the docs to reflect the project's architecture, boundary validation rules, and runtime model.
+- Add a repo-local `typescript` skill only if the destination repository wants the same skill-first agent workflow used in this template library.
 - Replace placeholder AI review workflow steps with the real action or check setup.
 
 ## MCP Suggestions
