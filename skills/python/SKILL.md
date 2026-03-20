@@ -1,6 +1,6 @@
 ---
 name: python
-description: Use this skill when the task is materially about Python package structure, imports, typing, serialization, trust boundaries, subprocess usage, packaging, dependency management, runtime entry points, or test strategy in a Python project.
+description: Use this skill when the task is materially about Python package structure, imports, typing, serialization, trust boundaries, subprocess usage, packaging or environment configuration, dependency management, runtime entry points, or test strategy in a Python project.
 ---
 
 # Python
@@ -11,7 +11,7 @@ Do not use this skill for generic product planning or infrastructure tasks unles
 
 ## Before You Change Code
 
-1. Inspect `pyproject.toml`, the Python version, and the installed frameworks or libraries before using version-specific APIs.
+1. Inspect the repo's Python packaging or environment config if present, the Python version, and the installed frameworks or libraries before using version-specific APIs.
 2. Check the project shape: library, service, CLI, worker, notebook-heavy repo, or a hybrid.
 3. Read [references/task-routing.md](references/task-routing.md) first, then load only the referenced files that match the task.
 
@@ -19,13 +19,13 @@ Do not use this skill for generic product planning or infrastructure tasks unles
 
 - Read [references/boundaries-and-inputs.md](references/boundaries-and-inputs.md) for trust boundaries, input validation, subprocess usage, config loading, logging, secrets, and serialization risk.
 - Read [references/module-and-type-shape.md](references/module-and-type-shape.md) for package layout, imports, type usage, data-model boundaries, and framework leakage into domain code.
-- Review [references/packaging-and-tooling.md](references/packaging-and-tooling.md) for `pyproject.toml`, dependency choices, entry points, environment tooling, and packaging assumptions.
-- Consult [references/testing-strategy.md](references/testing-strategy.md) for pytest shape, failure-path coverage, fixtures, integration boundaries, and regression checks.
+- Review [references/packaging-and-tooling.md](references/packaging-and-tooling.md) for packaging metadata, dependency choices, entry points, environment tooling, and repo-shape assumptions.
+- Consult [references/testing-strategy.md](references/testing-strategy.md) for the existing test layout, failure-path coverage, fixtures, integration boundaries, and regression checks.
 - Before closing work, check [references/validation-matrix.md](references/validation-matrix.md) so the validation matches the change.
 
 ## Workflow
 
-1. Inspect local versions, packaging config, and the affected runtime boundary.
+1. Inspect local versions, repo config, and the affected runtime boundary.
 2. Load only the references that match the task shape.
 3. Preserve explicit boundaries for imports, side effects, validation, and configuration.
 4. Make the smallest change that fits the existing project shape.

@@ -15,14 +15,13 @@ Copy the full contents of this folder into the root of the new repository.
 - `.pre-commit-config.yaml`
 - `.continue/checks/` review prompts
 - GitHub workflow templates
-- Starter `pyproject.toml`
 - Docs for coding standards, testing, tooling, and packaging
 
 ## Update After Copying
 
-- Replace the placeholder project metadata in `pyproject.toml`.
-- Treat the included `uv`, `ruff`, `pyright`, `pytest`, workflow steps, and review prompts as starter defaults until the destination repo replaces them with its real tooling choices.
-- Adjust commands if the project uses Poetry, Hatch, mypy, or another environment and typechecking setup.
+- Replace the placeholder workflow and command guidance with the destination repo's real environment, packaging, validation, and test setup.
+- Update `AGENTS.md` and the docs in `docs/` so they name the actual commands contributors should run locally and in CI.
+- Adjust the copied guidance if the project uses Poetry, Hatch, tox, nox, plain `pip`, or another environment and validation setup.
 - Extend the docs with framework-specific guidance such as FastAPI, Django, CLI, or data pipeline conventions.
 - If the destination repo wants `CLAUDE.md`, `GEMINI.md`, or another tool-specific entrypoint filename, copy or rename the tailored `AGENTS.md` after deciding that convention.
 - Replace placeholder AI review workflow steps with the real action or check setup.

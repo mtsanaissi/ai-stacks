@@ -13,6 +13,6 @@ Recommended sections:
 Conventions:
 
 - Keep dependencies minimal, explicit, and justified.
-- Prefer `pyproject.toml` as the packaging source of truth.
+- Keep one checked-in source of truth for packaging and runtime metadata, and document what file or files serve that role.
 - Document entry points, optional extras, and required Python versions in one place.
 - Ask before changing build backend, package name, or distribution assumptions after copy.

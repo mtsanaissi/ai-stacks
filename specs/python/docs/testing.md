@@ -4,8 +4,8 @@ Keep validation expectations explicit in the copied project.
 
 Recommended conventions:
 
-- Use pytest as the default test runner unless the project already has a stronger reason not to.
-- Run lint, typecheck, and the relevant test targets for every non-trivial change.
+- Keep the project's automated test entry points documented in one place, especially if different change types use different commands.
+- Run the repo's defined validation steps for every non-trivial change.
 - Prefer fast unit tests plus focused integration tests around subprocesses, config loading, serialization, and external service boundaries.
 - Test both success and important failure paths, especially for malformed input, auth failures, and unsafe payload handling.
 - Keep fixtures small and readable; avoid hidden global state that changes import or runtime behavior.

@@ -4,9 +4,8 @@ Use the smallest validation set that still exercises the risk introduced by the 
 
 ## Always
 
-- Run project lint.
-- Run project typecheck.
-- Run the relevant automated tests.
+- Run the repo's existing automated checks for the touched surface.
+- If the repo has no formal checks for that surface, exercise the changed runtime path directly.
 
 ## Public Types, Schemas, And Serialization Changes
 
@@ -22,6 +21,6 @@ Use the smallest validation set that still exercises the risk introduced by the 
 
 ## Tooling, Config, Or Dependency Changes
 
-- Verify the documented install, lint, typecheck, and test commands still work.
+- Verify the documented install and validation commands still work, if the repo defines them.
 - Check that lockfile and script changes are intentional and reviewable.
-- Confirm runtime and module assumptions still match the chosen package manager, bundler, and test runner.
+- Confirm runtime and module assumptions still match the chosen install flow, bundler, and test runner.

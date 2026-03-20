@@ -1,7 +1,5 @@
 # Module And Type Shape
 
-Python stays maintainable when module boundaries are explicit and imports remain boring.
-
 ## Rules
 
 - Keep domain logic free of framework-specific request, ORM, or transport objects where practical.

@@ -8,8 +8,9 @@ This file is meant to live at the root of a TypeScript project.
 - Use the repo-local `typescript` skill when available and the task is materially about type contracts, runtime validation, `tsconfig`, package exports, or toolchain behavior; otherwise follow the docs listed above directly.
 - Keep runtime behavior explicit and validate external input.
 
-## Commands
+## Starter Commands
 
+- Replace these after copy if the destination repo uses different scripts or install flow.
 - Install: `npm install`
 - Lint: `npm run lint`
 - Typecheck: `npm run typecheck`
@@ -23,5 +24,5 @@ This file is meant to live at the root of a TypeScript project.
 
 ## Validation
 
-- Run lint, typecheck, and tests after changes.
+- Run the repo's configured validation for the touched surface after changes. In the starter template, that means lint, typecheck, and tests.
 - Add negative tests when schemas, auth paths, env handling, or serialization behavior changes.

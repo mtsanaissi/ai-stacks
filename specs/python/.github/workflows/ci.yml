@@ -1,4 +1,4 @@
-name: Python CI
+name: Python CI Template
 
 on:
   pull_request:
@@ -10,8 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v4
-      - run: uv sync
-      - run: uv run ruff check .
-      - run: uv run pyright
-      - run: uv run pytest
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: |
+          echo "Replace this template workflow with the project's real install, validation, and test commands."
+          echo "Examples may include pip, Poetry, Hatch, tox, nox, pytest, or other repo-specific tooling."

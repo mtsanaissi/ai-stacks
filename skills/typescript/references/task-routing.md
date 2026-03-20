@@ -24,8 +24,8 @@ Use [runtime-and-input-safety.md](runtime-and-input-safety.md) when the task inv
 
 Use [tooling-and-config-safety.md](tooling-and-config-safety.md) when the task involves:
 
-- `tsconfig` changes
-- package manager, lockfile, or dependency updates
+- `tsconfig` or equivalent config changes
+- install-flow, lockfile, or dependency updates
 - ESM, CJS, module resolution, or export maps
 - build scripts, lint scripts, typecheck commands, or runtime target changes
 
