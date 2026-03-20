@@ -14,5 +14,9 @@ jobs:
         with:
           python-version: "3.12"
       - run: |
-          echo "Replace this template workflow with the project's real install, validation, and test commands."
-          echo "Examples may include pip, Poetry, Hatch, tox, nox, pytest, or other repo-specific tooling."
+          if [ "${CI_TEMPLATE_REPLACED:-}" != "true" ]; then
+            echo "::error::Replace this template workflow with the project's real install, validation, and test commands."
+            echo "::error::Set CI_TEMPLATE_REPLACED=true only as a temporary marker while wiring in the real workflow."
+            exit 1
+          fi
+          echo "CI_TEMPLATE_REPLACED=true is set. Replace this placeholder step with the repository's real CI commands."

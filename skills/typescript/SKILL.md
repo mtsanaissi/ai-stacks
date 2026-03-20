@@ -19,7 +19,7 @@ Do not use this skill for generic JavaScript, CSS, or React tasks unless TypeScr
 
 - Read [references/type-and-api-boundaries.md](references/type-and-api-boundaries.md) for public types, schema and interface drift, discriminated unions, branded IDs, serializers, and exported contract changes.
 - Read [references/runtime-and-input-safety.md](references/runtime-and-input-safety.md) for request or message validation, JSON parsing, environment handling, unsafe casts, dynamic code paths, and untrusted object traversal.
-- Read [references/tooling-and-config-safety.md](references/tooling-and-config-safety.md) for `tsconfig` or equivalent config, module resolution, dependency additions, export maps, scripts, and build-target decisions.
+- Consult [references/tooling-and-config-safety.md](references/tooling-and-config-safety.md) for `tsconfig` or equivalent config, module resolution, dependency additions, export maps, scripts, and build-target decisions.
 - Read [references/validation-matrix.md](references/validation-matrix.md) before closing work so the validation matches the change.
 
 ## Workflow
