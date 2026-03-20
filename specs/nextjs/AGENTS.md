@@ -8,8 +8,9 @@ This file is meant to live at the root of a Next.js project.
 - Use the repo-local `nextjs` skill when available and the task is materially about Next.js routing, rendering, caching, Server Actions, Route Handlers, or deployment behavior; otherwise follow the docs listed above directly.
 - Assume App Router patterns unless the repo already uses Pages Router in the affected area.
 
-## Commands
+## Starter Commands
 
+- Replace these after copy if the destination repo uses different scripts or install flow.
 - Install: `npm install`
 - Dev: `npm run dev`
 - Lint: `npm run lint`
@@ -24,5 +25,5 @@ This file is meant to live at the root of a Next.js project.
 
 ## Validation
 
-- Run lint and tests after changes.
+- Run the repo's configured validation for the touched surface after changes. In the starter template, that means lint and tests.
 - When changing auth, Server Actions, Route Handlers, headers, caching, or runtime boundaries, also verify the affected flow manually.

@@ -1,4 +1,4 @@
-name: Python CI
+name: Python CI Template
 
 on:
   pull_request:
@@ -10,8 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v4
-      - run: uv sync
-      - run: uv run ruff check .
-      - run: uv run pyright
-      - run: uv run pytest
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: |
+          if [ "${CI_TEMPLATE_REPLACED:-}" != "true" ]; then
+            echo "::error::Replace this template workflow with the project's real install, validation, and test commands."
+            echo "::error::Set CI_TEMPLATE_REPLACED=true only as a temporary marker while wiring in the real workflow."
+            exit 1
+          fi
+          echo "CI_TEMPLATE_REPLACED=true is set. Replace this placeholder step with the repository's real CI commands."

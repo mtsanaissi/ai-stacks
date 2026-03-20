@@ -1,6 +1,6 @@
 ---
 name: typescript
-description: Use this skill when the task is materially about TypeScript type design, schema and type drift, runtime validation, environment parsing, tsconfig or module configuration, build targets, package exports, or dependency and toolchain choices in a TypeScript project.
+description: Use this skill when the task is materially about TypeScript type design, schema and type drift, runtime validation, environment parsing, tsconfig or equivalent module configuration, build targets, package exports, or dependency and toolchain choices in a TypeScript project.
 ---
 
 # TypeScript
@@ -11,7 +11,7 @@ Do not use this skill for generic JavaScript, CSS, or React tasks unless TypeScr
 
 ## Before You Change Code
 
-1. Inspect the installed `typescript`, runtime, package manager, and relevant framework or build-tool versions before using language or tool-specific APIs.
+1. Inspect the installed `typescript`, runtime, relevant package or build config files, and framework or build-tool versions before using language or tool-specific APIs.
 2. Check the affected runtime and module target first: node, browser, shared, ESM, CJS, bundler, and test runner expectations.
 3. Read [references/task-routing.md](references/task-routing.md) first, then load only the referenced files that match the task.
 
@@ -19,7 +19,7 @@ Do not use this skill for generic JavaScript, CSS, or React tasks unless TypeScr
 
 - Read [references/type-and-api-boundaries.md](references/type-and-api-boundaries.md) for public types, schema and interface drift, discriminated unions, branded IDs, serializers, and exported contract changes.
 - Read [references/runtime-and-input-safety.md](references/runtime-and-input-safety.md) for request or message validation, JSON parsing, environment handling, unsafe casts, dynamic code paths, and untrusted object traversal.
-- Read [references/tooling-and-config-safety.md](references/tooling-and-config-safety.md) for `tsconfig`, module resolution, package manager changes, dependency additions, export maps, scripts, and build-target decisions.
+- Consult [references/tooling-and-config-safety.md](references/tooling-and-config-safety.md) for `tsconfig` or equivalent config, module resolution, dependency additions, export maps, scripts, and build-target decisions.
 - Read [references/validation-matrix.md](references/validation-matrix.md) before closing work so the validation matches the change.
 
 ## Workflow

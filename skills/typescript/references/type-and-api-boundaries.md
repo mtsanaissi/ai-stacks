@@ -1,7 +1,5 @@
 # Type And API Boundaries
 
-Public types are contracts. Runtime validators and serialization behavior must move with them.
-
 ## Rules
 
 - Update schemas, validators, serializers, and declared types together.

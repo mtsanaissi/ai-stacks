@@ -21,8 +21,8 @@ Copy the full contents of this folder into the root of the new repository.
 ## Update After Copying
 
 - Replace the placeholder package name in `package.json`.
-- Treat the included `npm` commands, workflow steps, and review prompts as starter defaults until the destination repo replaces them with its real package manager, scripts, and CI behavior.
-- Adjust scripts if the project uses `pnpm`, `bun`, Jest, or different lint commands.
+- Replace the included install commands, scripts, workflow steps, and review prompts with the destination repo's real package manager, scripts, and CI behavior.
+- Update the copied docs if the project uses a different package manager, test runner, or validation stack.
 - Tighten the docs to reflect the project's architecture, boundary validation rules, and runtime model.
 - If the destination repo wants `CLAUDE.md`, `GEMINI.md`, or another tool-specific entrypoint filename, copy or rename the tailored `AGENTS.md` after deciding that convention.
 - Add a repo-local `typescript` skill only if the destination repository wants the same skill-first agent workflow used in this template library.

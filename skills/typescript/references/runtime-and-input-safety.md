@@ -1,7 +1,5 @@
 # Runtime And Input Safety
 
-TypeScript only protects checked code paths. Untrusted input still needs runtime enforcement.
-
 ## Rules
 
 - Validate all untrusted input at the process, API, message, or CLI boundary.

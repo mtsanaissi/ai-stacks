@@ -24,17 +24,17 @@ Use [module-and-type-shape.md](module-and-type-shape.md) when the task involves:
 
 Use [packaging-and-tooling.md](packaging-and-tooling.md) when the task involves:
 
-- `pyproject.toml`
+- packaging metadata or environment bootstrap files
 - dependency additions or version constraints
 - CLI entry points, packaging metadata, or build backend choices
-- uv, Ruff, Pyright, pytest, pre-commit, or related toolchain changes
+- repo-specific automation, validation, or tooling changes
 
 ## Test Shape And Regression Coverage
 
 Use [testing-strategy.md](testing-strategy.md) when the task involves:
 
 - test coverage expectations
-- pytest fixtures or test organization
+- the existing test framework, fixtures, or test organization
 - integration boundaries, contract tests, or failure-path checks
 - deciding what to validate before closing work
 

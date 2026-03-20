@@ -49,7 +49,6 @@ REQUIREMENTS: dict[str, TemplateRequirement] = {
             "README.md",
             ".gitignore",
             ".pre-commit-config.yaml",
-            "pyproject.toml",
         ),
         required_dirs=(".continue/checks", ".github/workflows", "docs"),
         required_readme_sections=("What To Copy", "Included", "Update After Copying", "MCP Suggestions"),

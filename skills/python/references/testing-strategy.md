@@ -1,10 +1,8 @@
 # Testing Strategy
 
-The test shape should reflect Python runtime risk, not only line coverage.
-
 ## Rules
 
-- Run lint, typecheck, and the relevant pytest targets for non-trivial changes.
+- Run the repo's existing automated checks for the changed surface. If the repo has no formal lint, typecheck, or test step, use the smallest direct runtime validation that still exercises the risk.
 - Add focused tests for trust boundaries, serialization paths, subprocess behavior, and config handling when those areas change.
 - Cover both success and failure paths for auth-sensitive, IO-heavy, or user-controlled inputs.
 - Keep fixtures small and readable; prefer explicit setup over hidden global state.
@@ -22,4 +20,4 @@ The test shape should reflect Python runtime risk, not only line coverage.
 - Declaring a change safe because the happy-path unit tests passed.
 - Overusing monkeypatching until the test no longer reflects the actual runtime shape.
 - Leaving subprocess, XML, or serialization edges covered only indirectly through unrelated tests.
-- Skipping a typecheck after changing public interfaces or narrowing types.
+- Skipping interface or import validation after changing public contracts or typed surfaces.

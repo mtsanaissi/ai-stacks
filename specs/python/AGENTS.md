@@ -9,12 +9,9 @@ This file is meant to live at the root of a Python project.
 - Prefer type hints for new and changed code.
 - Keep side effects explicit and isolate IO.
 
-## Commands
+## Project Commands
 
-- Setup: `uv sync`
-- Lint: `uv run ruff check .`
-- Typecheck: `uv run pyright`
-- Test: `uv run pytest`
+- Replace this section after copy with the destination repo's actual setup, validation, and test commands.
 
 ## Non-Negotiables
 
@@ -24,5 +21,5 @@ This file is meant to live at the root of a Python project.
 
 ## Validation
 
-- Run lint, typecheck, and tests after changes.
+- Run the repo's configured validation for the touched surface after changes.
 - Add negative tests for malformed input, auth failures, subprocess boundaries, and serialization edges when those areas change.
