@@ -41,6 +41,8 @@ The stack templates are intentionally standalone and do not depend on each other
 
 For repo-local usage, `skills/` is the canonical source and `.agents/skills/` is a managed mirror for only the skills listed in [.agents/skills/selected-skills.txt](.agents/skills/selected-skills.txt).
 
+This repo also keeps project-local OpenCode agent profiles in `.opencode/agents/` for working inside this repository. They complement the root `AGENTS.md`; they do not replace it as the canonical repo instruction file.
+
 ## Template Model
 
 Each stack template should be:
@@ -75,6 +77,11 @@ Useful commands:
 ```bash
 python3 tools/agent_docs/validate_agent_files.py
 ```
+
+Repo-local OpenCode agent profiles live in `.opencode/agents/`.
+
+- primary agents: `build`, `plan`, `build-complex`, `plan-complex`
+- specialist subagents: `code`, `test`, `review`, `debug`, `docs`, `research`, `news`, `content`, `ocr`
 
 ## Local Skill Sync
 
