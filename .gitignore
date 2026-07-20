@@ -35,3 +35,6 @@ coverage/
 .DS_Store
 .idea/
 .vscode/settings.json
+
+# MCP / Playwright
+.playwright-mcp/
